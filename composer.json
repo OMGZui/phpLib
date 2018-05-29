@@ -1,0 +1,32 @@
+{
+    "name": "shengj/php-lib",
+    "description": "php lib",
+    "license": "MIT",
+    "authors": [{
+        "name": "小粽子",
+        "email": "862275679@qq.com"
+    }],
+    "require": {
+        "php": ">=7.0.0",
+        "symfony/var-dumper": "^4.0",
+        "str/str": "^1.0"
+    },
+    "minimum-stability": "dev",
+    "require-dev": {
+        "phpunit/phpunit": "^7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "OMGZui\\": "src/",
+            "Bench\\": "benchmarks/lib/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    }
+}

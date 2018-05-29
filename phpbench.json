@@ -1,0 +1,12 @@
+{
+  "bootstrap": "vendor/autoload.php",
+  "path": "benchmarks/lib",
+  "reports": {
+    "s": {
+      "extends": "default",
+      "title": "基准检测",
+      "description": "",
+      "cols": [ "subject", "mode" ]
+    }
+  }
+}
