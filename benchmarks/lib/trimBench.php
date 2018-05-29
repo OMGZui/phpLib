@@ -12,11 +12,11 @@ use OMGZui\Str\useStr;
 
 class trimBench
 {
-    private $num = 1000000;
+    private $num = 10000000;
 
     public function benchTrim()
     {
-        $str = new useStr();
+        $str = new useStr('  我是1个疯子，有医生开的证明ya  ');
         $str->get()->trim();
     }
 
