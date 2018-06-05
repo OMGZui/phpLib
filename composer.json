@@ -9,7 +9,9 @@
     "require": {
         "php": ">=7.0.0",
         "symfony/var-dumper": "^4.0",
-        "str/str": "^1.0"
+        "str/str": "^1.0",
+        "illuminate/filesystem": "^5.6",
+        "illuminate/config": "^5.6"
     },
     "minimum-stability": "dev",
     "require-dev": {

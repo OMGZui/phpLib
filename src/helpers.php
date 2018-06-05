@@ -18,8 +18,16 @@ if (!function_exists('xRange'))
 
 if (!function_exists('echoS'))
 {
-    function echoS($n = 1)
+    function echoS($n = 1, $str = '')
     {
-        echo "------------------------ $n ------------------------<br>";
+        echo "------------------------ $n.$str ------------------------<br>";
+    }
+}
+
+if (!function_exists('publicPath'))
+{
+    function publicPath()
+    {
+        return __DIR__;
     }
 }
