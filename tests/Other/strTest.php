@@ -5,7 +5,7 @@
  * Date: 2018/5/29
  * Time: 14:49
  */
-namespace Tests;
+namespace Tests\Other;
 
 use OMGZui\Str\useStr;
 use PHPUnit\Framework\TestCase;
