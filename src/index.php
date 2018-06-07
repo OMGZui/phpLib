@@ -14,6 +14,7 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use OMGZui\File\File;
+use OMGZui\Func\Func;
 use OMGZui\Obj\objFunc;
 use OMGZui\Str\useStr;
 
@@ -86,7 +87,7 @@ dump(Arr::random($arr));
 echoS(5, '文件系统');
 $path = '../public/test.txt';
 $dir = '../public';
-$content = Carbon::now().PHP_EOL;
+$content = Carbon::now() . PHP_EOL;
 
 $file = new File();
 $file->append($path, $content);
@@ -102,4 +103,23 @@ dump($config->get('name'));
 dump($config->get(['name', 'id', 'age']));
 dump($config);
 
-echoS(7, '');
+echoS(7, 'support');
+$coll = new Collection(['foo', 'bar', 'baz']);
+dump($coll->first());
+
+echoS(8, 'call_user_func');
+function vv($type)
+{
+    dump("You wanted a $type haircut, no problem");
+}
+
+// 以下写法等价
+call_user_func(__NAMESPACE__ . '\vv', "ggg");
+call_user_func([__NAMESPACE__ . '\Func\Func', 'vv'], "ggg");
+call_user_func([new Func(), 'vv'], "ggg");
+call_user_func(function ($type) {
+    dump("You wanted a $type haircut, no problem");
+}, 'ggg');
+
+
+echoS(9, '');
