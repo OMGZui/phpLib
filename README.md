@@ -11,7 +11,7 @@ php -S localhost:8080
 访问http://localhost:8080/src/index.php
 ```
 
-## 标准检查程序
+## 标测
 
 ```bash
 vendor/bin/phpbench run benchmarks/lib
