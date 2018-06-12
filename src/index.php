@@ -13,6 +13,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
+use OMGZui\Avatar\Avatar;
 use OMGZui\File\File;
 use OMGZui\Func\Func;
 use OMGZui\Obj\objFunc;
@@ -122,4 +123,12 @@ call_user_func(function ($type) {
 }, 'ggg');
 
 
-echoS(9, '');
+echoS(9, 'avatar');
+
+$avatar = new Avatar(new \Laravolt\Avatar\Avatar(), 'OMG Zui');
+$avatar1 = $avatar->setABase64();
+echo "<img src=\"{$avatar1}\" /><br>";
+echo "<img src=\"../public/sample.png\" /><br>";
+$avatar->saveAsFile('../public/sample.png', 100);
+$avatar2 = $avatar->outAsSVG();
+echo "{$avatar2}<br>";
