@@ -40,8 +40,8 @@ class PipelineTest extends TestCase
     {
         $pipe1 = function ($poster, Closure $next) {
             $poster += 1;
-            $_SERVER['__test.pipe.one1'] = $poster;
-            $_SERVER['__test.pipe.one2'] = $next($poster);
+//            $_SERVER['__test.pipe.one1'] = $poster;
+//            $_SERVER['__test.pipe.one2'] = $next($poster);
             return $next($poster);
         };
 
@@ -51,23 +51,23 @@ class PipelineTest extends TestCase
             }
 
             $poster += 3;
-            $_SERVER['__test.pipe.two1'] = $poster;
-            $_SERVER['__test.pipe.two2'] = $next($poster);
+//            $_SERVER['__test.pipe.two1'] = $poster;
+//            $_SERVER['__test.pipe.two2'] = $next($poster);
             return $next($poster);
         };
 
         $pipe3 = function ($poster, Closure $next) {
             $result = $next($poster);
-            $_SERVER['__test.pipe.three1'] = $poster;
-            $_SERVER['__test.pipe.three2'] = $result;
-            $_SERVER['__test.pipe.three3'] = $result * 2;
+//            $_SERVER['__test.pipe.three1'] = $poster;
+//            $_SERVER['__test.pipe.three2'] = $result;
+//            $_SERVER['__test.pipe.three3'] = $result * 2;
             return $result * 2;
         };
 
         $pipe4 = function ($poster, Closure $next) {
             $poster += 2;
-            $_SERVER['__test.pipe.four1'] = $poster;
-            $_SERVER['__test.pipe.four2'] = $next($poster);
+//            $_SERVER['__test.pipe.four1'] = $poster;
+//            $_SERVER['__test.pipe.four2'] = $next($poster);
             return $next($poster);
         };
 
