@@ -29,4 +29,13 @@ class EventsTest extends TestCase
         $this->assertEquals('bar', $_SERVER['__event.test']);
     }
 
+    public function testContainerResolutionOfEventHandlers()
+    {
+        $d = new Dispatcher($container = m::mock('Illuminate\Container\Container'));
+        $container->shouldReceive('make')->once()->with('FooHandler')->andReturn($handler = m::mock('stdClass'));
+        $handler->shouldReceive('onFooEvent')->once()->with('foo', 'bar');
+        $d->listen('foo', 'FooHandler@onFooEvent');
+        $d->fire('foo', ['foo', 'bar']);
+    }
+
 }
