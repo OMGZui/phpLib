@@ -38,4 +38,19 @@ class EventsTest extends TestCase
         $d->fire('foo', ['foo', 'bar']);
     }
 
+    public function testMock()
+    {
+        $mock = m::mock(MM::class);
+        $mock->shouldReceive('getName')->once()->with('zui')->andReturn('zui');
+        $this->assertEquals($mock->getName('zui'), (new MM())->getName('zui'));
+    }
+
+}
+
+class MM
+{
+    public function getName($name)
+    {
+        return $name;
+    }
 }
