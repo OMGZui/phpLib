@@ -15,14 +15,10 @@ php -S localhost:8080
 
 ```bash
 vendor/bin/phpbench run benchmarks/lib
-or
-vendor/bin/phpbench run benchmarks/lib/trimBench.php
 ```
 
 ## 测试
 
 ```bash
 vendor/bin/phpunit tests
-or
-vendor/bin/phpunit tests/strTest.php
 ```
