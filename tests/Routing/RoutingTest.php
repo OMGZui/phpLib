@@ -158,10 +158,7 @@ class RouteTestControllerStub extends Controller
 {
     public function __construct()
     {
-//        $this->middleware('Illuminate\Tests\Routing\RouteTestControllerMiddleware');
-//        $this->middleware('Illuminate\Tests\Routing\RouteTestControllerParameterizedMiddlewareOne:0');
-//        $this->middleware('Illuminate\Tests\Routing\RouteTestControllerParameterizedMiddlewareTwo:foo,bar');
-//        $this->middleware('Illuminate\Tests\Routing\RouteTestControllerExceptMiddleware', ['except' => 'index']);
+
     }
 
     public function index()

@@ -46,6 +46,18 @@ class RouteRegistrarTest extends TestCase
 
     }
 
+    public function testCanLimitMethodsOnRegisteredResource()
+    {
+        $this->router->resource('users', 'Tests\Routing\RouteRegistrarControllerStub')
+            ->only('index', 'show', 'destroy');
+
+        $this->assertCount(3, $this->router->getRoutes());
+
+        $this->assertTrue($this->router->getRoutes()->hasNamedRoute('users.index'));
+        $this->assertTrue($this->router->getRoutes()->hasNamedRoute('users.show'));
+        $this->assertTrue($this->router->getRoutes()->hasNamedRoute('users.destroy'));
+    }
+
     protected function seeResponse($content, Request $request)
     {
         $route = $this->getRoute();
@@ -60,5 +72,17 @@ class RouteRegistrarTest extends TestCase
         return last($this->router->getRoutes()->get());
     }
 
+}
 
+class RouteRegistrarControllerStub
+{
+    public function index()
+    {
+        return 'controller';
+    }
+
+    public function destroy()
+    {
+        return 'deleted';
+    }
 }
